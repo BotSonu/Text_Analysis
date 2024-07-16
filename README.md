@@ -48,16 +48,48 @@ python main.py
 - The script will generate an analysis_results.xlsx file containing the analysis results.
 
 
-### Generating the Final Deliverable
+## Functionality
+
+### Main Script (`main.py`)
+- **load_words(file_path, encoding='utf-8')**: Reads words from a file and returns a set of words. Handles different file encodings.
+- **load_specific_stopwords(folder_path, filenames, encoding='utf-8')**: Reads stopwords from multiple files and returns a set of stopwords. Handles different file encodings.
+- **save_text_to_file(text, file_path)**: Saves text to a file.
+- **extract_article_content(url)**: Extracts the title and content of an article from a given URL.
+- **count_syllables(word)**: Counts the number of syllables in a word.
+- **analyze_text(text, positive_words, negative_words, stopwords)**: Analyzes text and calculates various linguistic and sentiment metrics.
+- **main workflow**: Reads input data, loads dictionaries and stopwords, extracts articles, analyzes text, and saves results.
+
+## File Encoding Issues
+If you encounter errors related to file encoding (e.g., 'utf-8' codec can't decode byte errors), the script handles these issues by using the `'latin1'` encoding to read the files. This approach is flexible and does not require changing the file type.
+
+
+
+
+## Results
+The analysis results are saved in `analysis_results.xlsx`, containing metrics such as:
+- Positive Score
+- Negative Score
+- Polarity Score
+- Subjectivity Score
+- Average Sentence Length
+- Percentage of Complex Words
+- Fog Index
+- Average Number of Words per Sentence
+- Complex Word Count
+- Word Count
+- Syllables per Word
+- Personal Pronouns
+- Average Word Length
+
+Additionally, the extracted articles are saved in `extracted_articles.csv`.
+
+
+
+
+## Generating the Final Deliverable
 
 1. main.py: The script containing the complete code.
 2. analysis_results.xlsx: The output file that will be generated after running the script.
 3. README.md: Instructions on how to run the script and an explanation of the approach.
 
 ##### Make sure to replace `path/to/Input.xlsx`, `path/to/Masterdictionary`, and `path/to/stopwords/folder` with the actual paths to the input file and directories before running the script.
-
-
-
-## Output
-
-The analysis results are saved to an Excel file (analysis_results.xlsx).
